@@ -9,8 +9,10 @@ MIN_CONNECTOR_VERSIONS=(
   ["bigquery"]="0.11.0"
   ["gcs"]="1.7.0")
 
-BIGQUERY_CONNECTOR_VERSION=$(/usr/share/google/get_metadata_value attributes/bigquery-connector-version || true)
-GCS_CONNECTOR_VERSION=$(/usr/share/google/get_metadata_value attributes/gcs-connector-version || true)
+#BIGQUERY_CONNECTOR_VERSION=$(/usr/share/google/get_metadata_value attributes/bigquery-connector-version || true)
+BIGQUERY_CONNECTOR_VERSION="1.9.3"
+#GCS_CONNECTOR_VERSION=$(/usr/share/google/get_metadata_value attributes/gcs-connector-version || true)
+
 
 min_version() {
   echo -e "$1\n$2" | sort -r -t'.' -n -k1,1 -k2,2 -k3,3 | tail -n1
